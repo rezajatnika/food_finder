@@ -5,7 +5,7 @@ class Guide
     # TODO
     # locate the restaurant text file at path
     Restaurant.filepath = path
-    if Restaurant.file_exists?
+    if Restaurant.file_usable?
       puts "Found restaurant file."
     # or create a new file
     elsif Restaurant.create_file
