@@ -6,8 +6,7 @@ class Restaurant
   end
   
   def self.file_exists?
-    # TODO
-    # class should know if the restaurant file exists
+    # Class should know if the restaurant file exists
     if @@filepath && File.exists?(@@filepath)
       return true
     else
@@ -24,15 +23,13 @@ class Restaurant
   end
   
   def self.create_file
-    # TODO
-    # create the restaurant file
+    # Create the restaurant file
     File.open(@@filepath, 'w') unless file_exists?
     return file_usable?
   end
   
   def self.saved_restaurants
-    # TODO
-    # read the restaurant file
-    # return instances of restaurant
+    # Read the restaurant file
+    # Return instances of restaurant
   end
 end

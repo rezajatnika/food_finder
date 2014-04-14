@@ -2,14 +2,14 @@ require 'restaurant'
 
 class Guide
   def initialize(path=nil)
-    # locate the restaurant text file at path
+    # Locate the restaurant text file at path
     Restaurant.filepath = path
     if Restaurant.file_usable?
       puts "Found restaurant file."
-    # or create a new file
+    # Or create a new file
     elsif Restaurant.create_file
       puts "Created restaurant file."
-    # exit if create fails
+    # Exit if create fails
     else
       puts "Exiting...\n\n"
       exit!
@@ -18,13 +18,13 @@ class Guide
   
   def launch!
     introduction
-    # action loop
+    # Action loop
     result = nil
     until result == :quit
-      # what do you want to do? (list, find, add, quit)
+      # What do you want to do? (list, find, add, quit)
       print "> "
       user_response = gets.chomp
-      # do that action
+      # Do that action
       result = do_action(user_response)
     end
     conclusion
